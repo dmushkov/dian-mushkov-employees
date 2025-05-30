@@ -10,6 +10,6 @@ This repository contains two main parts:
 
   
 - **Frontend with Angular** — located in the `frontend-angular/` folder.  
-  See [`frontend-angular/README.md`](frontend/README.md) for setup, usage, and details.
+  See [`frontend-angular/README.md`](frontend-angular/README.md) for setup, usage, and details.
 
 Please refer to the respective README files for detailed instructions on each part.
