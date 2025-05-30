@@ -1,0 +1,27 @@
+<div style="max-width: 800px; margin: 2rem auto; padding: 1rem;">
+  <h2>Upload CSV and Discover Employee Collaboration Durations</h2>
+
+  <input type="file" accept=".csv" (change)="onFileSelected($event)" />
+  <button (click)="upload()" [disabled]="!selectedFile || loading" style="margin-left: 1rem;">
+    {{ loading ? 'Uploading...' : 'Upload' }}
+  </button>
+
+  <p *ngIf="error" style="color: red;">{{ error }}</p>
+
+  <table *ngIf="rows.length > 0" style="width: 100%; margin-top: 1rem; border-collapse: collapse;">
+    <thead>
+    <tr>
+      <th>Employee ID #1</th>
+      <th>Employee ID #2</th>
+      <th>Days worked</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let row of rows; let i = index" [attr.data-index]="i">
+      <td>{{ row.empId1 }}</td>
+      <td>{{ row.empId2 }}</td>
+      <td>{{ row.daysWorked }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
